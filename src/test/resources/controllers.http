@@ -1,0 +1,61 @@
+### test login handler
+POST http://localhost:8080/csm/login/handle
+Content-Type: application/x-www-form-urlencoded
+
+phone=123456&password=123&role=TEACHER
+
+### get user by phone
+GET http://localhost:8080/csm/user/phone/12345678
+
+### create user
+POST http://localhost:8080/csm/user
+Content-Type: application/x-www-form-urlencoded
+
+u.phone=2&fullName=lzj&u.password=2&role=TEACHER&birthday=2020-4-9
+
+### update user
+PUT http://localhost:8080/csm/user/1
+Content-Type: application/x-www-form-urlencoded
+
+phone=2&fullName=lzj&password=2&role=TEACHER
+
+
+### delete user
+DELETE http://localhost:8080/csm/user/1
+
+### show users
+GET http://localhost:8080/csm/user
+
+### export as pdf
+GET http://localhost:8080/csm/user/export/pdf
+
+### export as excel
+GET http://localhost:8080/csm/user/export/excel
+
+### course score
+GET http://localhost:8080/csm/cs/input?cs=1-1-80
+
+
+### register
+POST http://localhost:8080/csm/register/json
+Content-Type: application/json
+
+{
+  "fullName": "lzj1",
+  "phone": "123456",
+  "password": "123",
+  "role": "TEACHER",
+  "birthday": "2010-10-10",
+  "age": 20
+}
+
+### session attribute
+GET http://localhost:8080/csm/login/user
+
+### logout
+POST http://localhost:8080/csm/login/logout
+
+
+### upload avatar
+POST http://localhost:8080/csm/user/upload
+Content-Type: multipart/form-data
